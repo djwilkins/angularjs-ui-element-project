@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="myApp">
+<head>
+    <title>Compound Interest Finder</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<link rel="stylesheet" href="style.css">
+<body ng-controller="myCtrl">
+    
+    <div class="input-container">
+        Current Age: <input type="number" id="myCurrentAge" ng-model="myCurrentAge" ng-hide="showHideToggleArray.myCurrentAge" ng-keydown="checkIfKeyWasPressed($event, 'myCurrentAge')" ng-blur="showHideToggleFunc('myCurrentAge')" onfocus="this.select()" /><div class="myCurrentAge" ng-show="showHideToggleArray.myCurrentAge" ng-click="showHideToggleFunc('myCurrentAge')">{{ myCurrentAge }}</div>
+        </br></br>
+        Cost of Living: <input type="number" id="myCostOfLiving" ng-model="myCostOfLiving" ng-hide="showHideToggleArray.myCostOfLiving" ng-keydown="checkIfKeyWasPressed($event, 'myCostOfLiving')" ng-blur="showHideToggleFunc('myCostOfLiving')" onfocus="this.select()" /><div class="myCostOfLiving" ng-show="showHideToggleArray.myCostOfLiving" ng-click="showHideToggleFunc('myCostOfLiving')">{{ myCostOfLiving | currency }}</div>
+        </br></br>
+        Current Savings: <input type="number" id="myCurrentSavings" ng-model="myCurrentSavings" ng-hide="showHideToggleArray.myCurrentSavings" ng-keydown="checkIfKeyWasPressed($event, 'myCurrentSavings')" ng-blur="showHideToggleFunc('myCurrentSavings')" onfocus="this.select()" /><div class="myCurrentSavings" ng-show="showHideToggleArray.myCurrentSavings" ng-click="showHideToggleFunc('myCurrentSavings')">{{ myCurrentSavings | currency }}</div>
+    </div>
+
+    <!-- Putting down in body best practice so has rest of elements in DOM to manipulate. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
